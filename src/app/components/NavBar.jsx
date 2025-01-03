@@ -15,7 +15,7 @@ const NavBar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 flex items-center justify-between px-8 py-4">
+        <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 flex items-center justify-between px-8 py-4 border-b border-[#33353F]">
             {/* Logo Section */}
             <div className="flex items-center cursor-pointer">
                 <img
