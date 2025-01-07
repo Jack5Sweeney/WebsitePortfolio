@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import GitHubIcon from "public/images/github-icon.svg";
-import LinkedInIcon from "public/images/linkedin-icon.svg";
+import GitHubIcon from "/public/images/github-icon.svg";
+import LinkedInIcon from "/public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
