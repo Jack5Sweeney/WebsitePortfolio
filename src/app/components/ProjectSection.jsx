@@ -14,7 +14,7 @@ const projectsData = [
     tag: ["All", "Hardware"],
     about: "Pill Pal is a smart and user-friendly automatic pill dispenser designed to assist families in managing their child's medication safely, affordably, and engagingly. It addresses the challenges faced by 14.5 million children who struggle with taking their medications by providing features like fingerprint authentication, LED alerts, and emergency contact integration. The device aims to give parents peace of mind by tracking medication schedules, mood patterns, and reinforcing healthy habits. With its robot-like design and interactive features, Pill Pal makes taking medication more approachable for kids while enhancing safety and convenience with features such as automated water dispensing.",
     contributions: "I conducted extensive research and selection of the components, including the fingerprint module, Arduino board, display, speakers, and LEDs ensuring the device met our performance, safety, and budget requirements. I was also responsible for the integration of hardware and software, enabling the functionality of features such as fingerprint authentication, LED alerts, and automated dispensing. Additionally, I collaborated with another group member to design and implement the user-friendly graphical interface, making it intuitive and engaging for parents and children to interact with the device.",
-    images: ["/images/pillPal1.png", "/images/pillPal2.png"],
+    images: ["public/images/pillPal1.png", "public/images/pillPal2.png"],
   },
   {
     id: 2,
