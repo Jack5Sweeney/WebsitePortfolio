@@ -20,7 +20,7 @@ const AboutSection = () => {
                 {/* Fixed height for the image */}
                 <div className="relative flex items-center justify-center w-[470px] h-[320px] bg-[#181818] shadow-lg rounded-lg mx-auto">
                     <Image
-                        src="/images/about-image.png"
+                        src="/images/projects/about-image.png"
                         width={450}
                         height={450}
                         alt="About Me workspace with engineering designs"
