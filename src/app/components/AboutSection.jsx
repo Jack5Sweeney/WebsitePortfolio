@@ -18,13 +18,13 @@ const AboutSection = () => {
             {/* Grid layout with fixed height */}
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-10 px-4 xl:gap-16 sm:py-16 xl:px-16 min-h-[500px]">
                 {/* Fixed height for the image */}
-                <div className="relative flex items-center justify-center w-[470px] h-[320px] bg-[#181818] shadow-lg rounded-lg mx-auto">
+                <div className="relative flex items-center justify-center w-[470px] h-[310px] bg-[#181818] shadow-lg rounded-lg mx-auto">
                     <Image
                         src="/images/about-image.png"
                         width={450}
                         height={450}
                         alt="About Me workspace with engineering designs"
-                        className="object-contain"
+                        className="object-contain rounded-lg"
                     />
                 </div>
                 {/* Content with fixed height */}
@@ -59,7 +59,7 @@ const AboutSection = () => {
                                 <ul>
                                     <li>Software Skills: Java, Python, C++, MATLAB</li>
                                     <li>
-                                        Hardware Skills: Soldering, Circuit Analysis, Microcontroller Programming, System Integration
+                                        Hardware Skills: PCB Design - Altium, Soldering, Circuit Analysis, Microcontroller Programming, System Integration
                                     </li>
                                 </ul>
                             </div>
@@ -67,7 +67,7 @@ const AboutSection = () => {
                         {tab === "education" && (
                             <div>
                                 <ul>
-                                    <li>Bachelor's Degree in Computer Engineering</li>
+                                    <li>Candidate for Bachelor's Degree in Computer Engineering</li>
                                     <li>Concentration: Computer Science</li>
                                 </ul>
                             </div>

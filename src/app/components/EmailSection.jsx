@@ -2,6 +2,7 @@
 import React from "react";
 import GitHubIcon from "/public/images/github-icon.svg";
 import LinkedInIcon from "/public/images/linkedin-icon.svg";
+import StravaIcon from "/public/images/strava.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -19,6 +20,9 @@ const EmailSection = () => {
                     </Link>
                     <Link href="https://www.linkedin.com/in/jack-sweeney-5145002a3/">
                         <Image src={LinkedInIcon} alt="Linkedin Icon" />
+                    </Link>
+                    <Link href="https://www.strava.com/athletes/110351992">
+                        <Image src={StravaIcon} alt="Strava Icon" />
                     </Link>
                 </div>
             </div>

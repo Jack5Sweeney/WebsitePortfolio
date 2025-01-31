@@ -39,7 +39,6 @@ const HeroSection = () => {
                         >
                             Contact Me
                         </button>
-                        {/* Download Resume Button */}
                         <button
                             className="relative px-6 py-3 w-full sm:w-fit mt-4 sm:mt-0 rounded-full border-2 border-white text-white hover:text-slate-200 hover:bg-slate-800 transition-all text-center"
                             onClick={async () => {
@@ -59,13 +58,13 @@ const HeroSection = () => {
                     </div>
                 </div>
                 <div className="col-span-5 place-self-center mt-10 lg:mt-0">
-                    <div className="rounded-full bg-[#181818] w-[300px] h-[300px] relative">
+                    <div className="relative flex items-center justify-center w-[320px] h-[320px] bg-[#181818] shadow-lg rounded-lg mx-auto">
                         <Image
-                            src="/images/hero-image.png"
+                            src="/images/headshot.png"
                             alt="hero image"
-                            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            width={280}
-                            height={280}
+                            className="object-contain rounded-lg"
+                            width={300}
+                            height={300}
                         />
                     </div>
                 </div>
