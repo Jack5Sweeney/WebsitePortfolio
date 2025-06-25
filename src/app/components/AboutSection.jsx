@@ -18,11 +18,11 @@ const AboutSection = () => {
             {/* Grid layout with fixed height */}
             <div className="md:grid md:grid-cols-2 gap-8 items-center py-10 px-4 xl:gap-16 sm:py-16 xl:px-16 min-h-[500px]">
                 {/* Image container - hidden on small screens */}
-                <div className="relative md:flex hidden items-center justify-center w-[470px] h-[310px] bg-[#181818] shadow-lg rounded-lg mx-auto">
+                <div className="relative md:flex hidden items-center justify-center w-[370px] h-[370px] bg-[#181818] shadow-lg rounded-lg mx-auto">
                     <Image
-                        src="/images/about-image.png"
-                        width={450}
-                        height={450}
+                        src="/images/headshot.png"
+                        width={350}
+                        height={350}
                         alt="About Me workspace with engineering designs"
                         className="object-contain rounded-lg"
                     />
@@ -31,11 +31,10 @@ const AboutSection = () => {
                 <div>
                     <h2 className="text-4xl text-white font-bold mb-4 pt-10">About Me</h2>
                     <p className="text-base lg:text-lg text-slate-200 mb-4">
-                        I’m Jack Sweeney, a second-year Computer Engineering student at Northeastern University with a strong passion 
-                        for system integration and hardware-software projects. Throughout my journey, I’ve gained valuable 
-                        experience working on diverse projects to build my hardware/software skills. I’m a quick learner who is always 
-                        eager to expand my knowledge and expertise. Beyond engineering, I’m passionate about running, weightlifting, 
-                        and creative endeavors such as cut-and-sew clothing design and custom computer building.
+                        I'm Jack Sweeney, a third-year Computer Engineering student at Northeastern University with a 
+                        passion for bridging hardware and software. I thrive on hands-on projects that challenge me to 
+                        learn quickly and deepen my technical skills. Outside the classroom, I enjoy running, weightlifting, 
+                        and exploring creative outlets like custom clothing design and building personalized computer setups.
                     </p>
                     {/* Tabs */}
                     <div className="flex flex-row mt-4 space-x-4">
@@ -57,9 +56,9 @@ const AboutSection = () => {
                         {tab === "skills" && (
                             <div>
                                 <ul>
-                                    <li>Software Skills: Java, Python, C++, MATLAB</li>
+                                    <li>Software Skills: Java, C, C++, Python, Git</li>
                                     <li>
-                                        Hardware Skills: PCB Design - Altium, Soldering, Circuit Analysis, Microcontroller Programming, System Integration
+                                        Hardware Skills: PCB Design - Altium, Soldering, Circuit Analysis, Microcontroller Programming
                                     </li>
                                 </ul>
                             </div>

@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "module": "esnext",
+    "target": "esnext",
     "paths": {
       "@/*": ["./src/*"]
     }

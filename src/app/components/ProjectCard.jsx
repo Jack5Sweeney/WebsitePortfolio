@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { EyeIcon } from "@heroicons/react/24/solid";
 
-const ProjectCard = ({ imgUrl, title, description, onEyeClick }) => {
+const ProjectCard = ({ imgUrl, title, description, slug }) => {
   return (
     <div>
       <div
@@ -10,12 +11,14 @@ const ProjectCard = ({ imgUrl, title, description, onEyeClick }) => {
         style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
       >
         <div className="overlay flex items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 opacity-0 group-hover:opacity-100 group-hover:bg-opacity-80 transition-all duration-400">
-          <button
-            onClick={onEyeClick}
-            className="h-14 w-14 border-2 relative rounded-full border-slate-200 hover:border-white"
-          >
-            <EyeIcon className="h-10 w-10 text-slate-200 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover:text-white" />
-          </button>
+          <Link href={`/projects/${slug}`}>
+            <button
+              className="h-14 w-14 border-2 relative rounded-full border-slate-200 hover:border-white"
+              aria-label={`View ${title}`}
+            >
+              <EyeIcon className="h-10 w-10 text-slate-200 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:text-white" />
+            </button>
+          </Link>
         </div>
       </div>
       <div className="text-white rounded-b-xl bg-[#181818] py-6 px-4">
