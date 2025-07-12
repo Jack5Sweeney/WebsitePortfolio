@@ -12,7 +12,7 @@ const EmailSection = () => {
             <div>
                 <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
                 <p className="text-slate-200 md-4 max-w-md">
-                    I'm currently looking for new Co-op opportunities for July-December of 2025, my inbox is always open. Whether you have a question or just want to say hi, I'll get back to you!
+                    I'm currently looking for new Co-op opportunities for July-December of 2026, my inbox is always open. Whether you have a question or just want to say hi, I'll get back to you! And if you run check out my Strava below ;)
                 </p>
                 <div className="socials flex flex-row gap-5 mt-5">
                     <Link href="https://github.com/Jack5Sweeney">

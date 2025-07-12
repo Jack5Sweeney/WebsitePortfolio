@@ -21,9 +21,9 @@ const ResumePage = () => {
                 height="1025px"
                 className="mx-auto"
             />
-
-            {/* Footer */}
-            <Footer />
+            <div className="pt-10 w-full">
+                <Footer />
+            </div>
         </section>
     );
 };

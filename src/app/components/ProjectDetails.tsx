@@ -1,6 +1,7 @@
 "use client";
-import React, { useRef, useState } from "react";
-import Image from "next/image";
+import React, { useRef, useState, useEffect } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+
 
 interface ProjectDetailsProps {
   title: string;
@@ -18,12 +19,32 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   skills = [],
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollX, setScrollX] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        setCanScrollLeft(scrollLeft > 0);
+        setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
+      }
+    };
+
+    const ref = scrollRef.current;
+    if (ref) {
+      ref.addEventListener("scroll", checkScroll);
+      checkScroll(); // initial check
+    }
+
+    return () => {
+      if (ref) ref.removeEventListener("scroll", checkScroll);
+    };
+  }, []);
 
   const scrollBy = (offset: number) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: offset, behavior: "smooth" });
-      setScrollX(scrollRef.current.scrollLeft + offset);
     }
   };
 
@@ -31,19 +52,20 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
     <section className="text-white px-8 py-12 max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold mb-8">{title}</h1>
 
-      {/* Image Carousel */}
-      <div className="relative mb-12">
+      {/* Carousel Section */}
+      <div className="mb-12 flex items-center justify-center gap-4">
         {/* Left Arrow */}
-        {scrollX > 0 && (
-          <button
-            onClick={() => scrollBy(-400)}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-black bg-opacity-40 hover:bg-white hover:bg-opacity-30 transition-colors duration-300 flex items-center justify-center"
-          >
-            <span className="text-white text-lg">&#x25C0;</span>
-          </button>
-        )}
+        <button
+          onClick={() => scrollBy(-400)}
+          disabled={!canScrollLeft}
+          className={`transition-colors duration-200 ${canScrollLeft ? "text-gray-400 hover:text-white" : "text-gray-600 cursor-default"
+            }`}
+          aria-label="Scroll left"
+        >
+          <ChevronLeftIcon className="w-8 h-8" />
+        </button>
 
-        {/* Scroll Container */}
+        {/* Image Carousel */}
         <div
           ref={scrollRef}
           className="flex overflow-x-auto space-x-4 scroll-smooth"
@@ -62,8 +84,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           {images.map((src, i) => (
             <div
               key={i}
-              className="flex-shrink-0 snap-start relative rounded-lg overflow-hidden"
-              style={{ maxWidth: '100%', height: 'auto' }}
+              className="flex-shrink-0 snap-start relative rounded-lg overflow-hidden flex items-center justify-center "
+              style={{ maxWidth: "100%", height: "auto" }}
             >
               <img
                 src={src}
@@ -72,18 +94,18 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
               />
             </div>
           ))}
-
         </div>
 
         {/* Right Arrow */}
-        {images.length > 2 && (
-          <button
-            onClick={() => scrollBy(400)}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-black bg-opacity-40 hover:bg-white hover:bg-opacity-30 transition-colors duration-300 flex items-center justify-center"
-          >
-            <span className="text-white text-lg">&#x25B6;</span>
-          </button>
-        )}
+        <button
+          onClick={() => scrollBy(400)}
+          disabled={!canScrollRight}
+          className={`transition-colors duration-200 ${canScrollRight ? "text-gray-400 hover:text-white" : "text-gray-600 cursor-default"
+            }`}
+          aria-label="Scroll right"
+        >
+          <ChevronRightIcon className="w-8 h-8" />
+        </button>
       </div>
 
       {/* Problem Section */}

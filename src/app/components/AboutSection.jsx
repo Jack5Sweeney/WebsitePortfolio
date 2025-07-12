@@ -34,7 +34,7 @@ const AboutSection = () => {
                         I'm Jack Sweeney, a third-year Computer Engineering student at Northeastern University with a 
                         passion for bridging hardware and software. I thrive on hands-on projects that challenge me to 
                         learn quickly and deepen my technical skills. Outside the classroom, I enjoy running, weightlifting, 
-                        and exploring creative outlets like custom clothing design and building personalized computer setups.
+                        and exploring creative outlets like sewing and building computers.
                     </p>
                     {/* Tabs */}
                     <div className="flex flex-row mt-4 space-x-4">
